@@ -1,0 +1,19 @@
+<% provide(:title, " - "<<@shop.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @shop.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="span8">
+    <% if @shop.foods.any? %>
+        <h3>foods (<%= @shop.foods.count %>)</h3>
+        <ol class="microposts">
+          <%= render @foods %>
+        </ol>
+        <%= will_paginate @foods %>
+    <% end %>
+  </div>
+</div>

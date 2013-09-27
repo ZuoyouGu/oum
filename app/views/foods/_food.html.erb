@@ -1,0 +1,11 @@
+<li>
+  <tr class="row">
+  <td><span class="content"><%= food.name %></span></td>
+  <td><span class="price">
+    price: <%= food.price %>
+  </span></td>
+  <% if signed_in? %>
+      <td><%= link_to "place order", new_order_path(:food_id=>food.id, :quantity=>1, :price=>food.price), class: "btn btn-primary" %></td>
+  <% end %>
+  </tr>
+</li>

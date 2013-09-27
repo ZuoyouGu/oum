@@ -1,0 +1,18 @@
+<h1>Food</h1>
+
+<table class="table">
+  <tr class="row">
+    <th>shop</th>
+    <th>name</th>
+    <th>price</th>
+    <th>operations</th>
+  </tr>
+  <% @foods.each do |food|%>
+      <tr class="row">
+        <td class=""><%= food.shop.name %></td>
+        <td><%= food.name %></td>
+        <td><%= food.price %></td>
+        <td><%= link_to "place order", order_path, class: "btn btn-primary" %></td>
+      </tr>
+  <% end %>
+</table>
